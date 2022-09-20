@@ -1,1 +1,1 @@
-# reddit-heatmap
+# Reddit Data Visualization
