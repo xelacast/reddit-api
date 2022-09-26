@@ -15,7 +15,7 @@ All components written in code will run through tests before pushed to the devel
 3. Create all main static features.
 4. Learn the Reddit API to get data. This might require me using express to pull in data server side to format what I need for the frontend. It might be a costly compute I am unsure at the moment.
 5. Implement the heatmap. The colors will change from a scale of red to green. red being at the bottom of the barrel and green being at the top of the barrel. Meaning the more activity of the subreddit the greener it gets. The less, the redder. Note: all subreddits have different amounts of traffic will there be a scale thats computed for each one? A maximum that is computed? Or will there be a filter to see how much activity in thousands that is represented? **Final: There will be a heat map that calculates the maximum traffic through out the day and the color will scale with that and the heatmap will show the amount in thousands whe you hover over a tile.**
-[Link to Designs and Task Board]()
+[Link to Designs and Task Board](https://drive.google.com/file/d/18tszETaYrnSfs-8g8Hcs-L2yn1KDlmMe/view?usp=sharing)
 
 # Software Development
 
