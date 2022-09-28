@@ -5,7 +5,7 @@ import Article from '../assets/newspaper-outline.svg';
 import NavItem from './navItem';
 
 interface NavigationProps {
-  icon: any;
+  icon;
   name: string;
   href: string;
 }

@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 
 interface NavigationProps {
-  icon: any;
+  icon;
   name: string;
   href: string;
 }
