@@ -1,0 +1,65 @@
+@use './utils/library';
+
+.navContainer {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  transition: all 0.3s ease;
+
+  .icon {
+    padding: 5px 10px 0 10px;
+    color: library.$icon-inactive;
+    transition: all library.$transition ease;
+  }
+
+  .textContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  p {
+    padding-left: 5px;
+    transition: all library.$transition ease;
+  }
+
+  .bar::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 3px;
+    background-color: library.$icon-inactive;
+    top: 0;
+    right: 0;
+    transition: all library.$transition ease;
+    border-radius: 100px;
+  }
+
+  &:hover {
+    .icon {
+      color: library.$icon-hover;
+    }
+
+    p {
+      color: library.$text-hover;
+    }
+
+    .bar::after {
+      background-color: library.$icon-hover;
+    }
+  }
+}
+
+.active {
+
+  .icon,
+  .bar::after {
+    color: library.$icon-active;
+  }
+
+  p {
+    color: library.$text-active;
+  }
+}
