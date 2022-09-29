@@ -52,8 +52,7 @@
   }
 }
 
-.active {
-
+.navContainer.active {
   .icon,
   .bar::after {
     color: library.$icon-active;

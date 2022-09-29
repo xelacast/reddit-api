@@ -4,6 +4,10 @@ import User from '../assets/person-circle-outline.svg';
 import Article from '../assets/newspaper-outline.svg';
 import NavItem from './navItem';
 
+// type Navigation = {
+//   navigation: NavigationProps[];
+// };
+
 interface NavigationProps {
   icon;
   name: string;
@@ -28,7 +32,7 @@ const navigation: NavigationProps[] = [
   },
 ];
 
-const NavBar = () => {
+const NavBar = ({ navigation }) => {
   return (
     <div className={styles.container}>
       <div className={styles.header}>
@@ -49,3 +53,13 @@ const NavBar = () => {
 };
 
 export default NavBar;
+
+export const getStaticProps = async () => {
+  const res = await fetch('localhost:3000/api/navigation');
+  const navigation: NavigationProps[] = await res.json();
+  return {
+    params: {
+      navigation,
+    },
+  };
+};
