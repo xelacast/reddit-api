@@ -4,7 +4,7 @@ import DataDisplay from '../components/dataDisplay';
 
 import styles from '../styles/profile.module.scss';
 
-const Profile = () => {
+const Subreddits = () => {
   const [user, setUser] = useState('');
 
   return (
@@ -20,4 +20,11 @@ const Profile = () => {
   );
 };
 
-export default Profile;
+export default Subreddits;
+
+// export const getStaticProps: GetStaticProps = async (context) => {
+
+//   return {
+
+//   }
+// }
