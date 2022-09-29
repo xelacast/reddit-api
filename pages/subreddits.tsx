@@ -21,10 +21,3 @@ const Subreddits = () => {
 };
 
 export default Subreddits;
-
-// export const getStaticProps: GetStaticProps = async (context) => {
-
-//   return {
-
-//   }
-// }

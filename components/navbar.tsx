@@ -1,12 +1,8 @@
 import styles from '../styles/navbar.module.scss';
-import Dash from '../assets/home-outline.svg';
-import User from '../assets/person-circle-outline.svg';
+import Home from '../assets/home-outline.svg';
+import User from '../assets/people-outline.svg';
 import Article from '../assets/newspaper-outline.svg';
 import NavItem from './navItem';
-
-// type Navigation = {
-//   navigation: NavigationProps[];
-// };
 
 interface NavigationProps {
   icon;
@@ -16,7 +12,7 @@ interface NavigationProps {
 
 const navigation: NavigationProps[] = [
   {
-    icon: Dash,
+    icon: Home,
     name: 'Dashboard',
     href: '/',
   },
@@ -32,7 +28,7 @@ const navigation: NavigationProps[] = [
   },
 ];
 
-const NavBar = ({ navigation }) => {
+const NavBar = () => {
   return (
     <div className={styles.container}>
       <div className={styles.header}>
@@ -53,13 +49,3 @@ const NavBar = ({ navigation }) => {
 };
 
 export default NavBar;
-
-export const getStaticProps = async () => {
-  const res = await fetch('localhost:3000/api/navigation');
-  const navigation: NavigationProps[] = await res.json();
-  return {
-    params: {
-      navigation,
-    },
-  };
-};
