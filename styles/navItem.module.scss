@@ -21,7 +21,7 @@
   }
 
   p {
-    padding-left: 5px;
+    padding-left: 10px;
     transition: all library.$transition ease;
   }
 
@@ -52,10 +52,13 @@
   }
 }
 
-.navContainer.active {
-  .icon,
-  .bar::after {
+a.navContainer.active {
+  .icon {
     color: library.$icon-active;
+  }
+
+  .bar::after {
+    background-color: library.$icon-active;
   }
 
   p {

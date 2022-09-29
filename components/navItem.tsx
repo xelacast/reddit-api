@@ -15,14 +15,14 @@ const NavItem = ({ icon, name, href }: NavigationProps) => {
     <Link href={href}>
       <a
         className={
-          router.pathname == href
+          router.pathname === href
             ? `${styles.navContainer} ${styles.active}`
             : `${styles.navContainer}`
         }
       >
         <div className={styles.textContainer}>
           <div className={styles.icon}>
-            <Comp width={20} height={20} />
+            <Comp width={25} height={25} />
           </div>
           <p>{name}</p>
         </div>
