@@ -1,8 +1,7 @@
 .container {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: 55vh auto auto;
-  margin: 50px;
+  grid-template-rows: 700px auto auto;
   gap: 1fr
 }
 
@@ -14,7 +13,7 @@
 }
 
 .main {
-  grid-column: 4 / 13;
+  grid-column: 3 / 13;
   background-color: azure;
   grid-row: 1 / 3;
 }

@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import Search from '../components/search';
-import DataDisplay from '../components/dataDisplay';
+import DataDisplay from '../components/subreddits/dataDisplay';
 
-import styles from '../styles/profile.module.scss';
+import styles from '../styles/subreddits.module.scss';
 
 const Subreddits = () => {
   const [user, setUser] = useState('');
