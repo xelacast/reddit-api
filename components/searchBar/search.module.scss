@@ -1,10 +1,14 @@
+@use '../../styles/utils/library';
+
 .container {
-  background-color: beige;
-  width: 560px;
+  // background-color: library.$search-bk;
+  width: 500px;
   height: 3em;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px;
-  margin: 10px;
+  margin: 20px;
+  border-radius: 50px;
+  box-shadow: 0 5px 7px grey;
 }

@@ -12,11 +12,8 @@
     border: none;
     padding: 10px 20px 10px 35px;
     // background-color: library.$search-bk;
-    background-color: grey;
-
-    &:active {
-      border: green;
-    }
+    background: green;
+    outline: none;
   }
 
   .icon {

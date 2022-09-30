@@ -23,9 +23,10 @@ const SearchBar = ({ setter }) => {
         className={styles.input}
         id="input-box"
         placeholder="search"
+        autoFocus
         onChange={(e) => handleChange(e)}
         onKeyDown={(e) => {
-          if (e.key === 'enter') {
+          if (e.key === 'Enter') {
             handleSubmit();
           }
         }}
