@@ -1,21 +1,26 @@
 .container {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: 700px auto auto;
-  gap: 1fr
+  grid-template-rows: 100px 600px auto auto;
+  gap: 10px
+}
+
+.header {
+  grid-column: 3 / 12;
+  grid-row: 1 / 2;
 }
 
 .nav {
     background-color: grey;
     grid-column: 1 / 3;
-    grid-row: 1 / 2;
+    grid-row: 1 / 3;
     max-width: 400px;
 }
 
 .main {
   grid-column: 3 / 13;
   background-color: azure;
-  grid-row: 1 / 3;
+  grid-row: 2 / 4;
 }
 
 .footer {
@@ -23,7 +28,7 @@
   display: flex;
   justify-content: center;
   background-color: gold;
-  grid-row: 3/4;
+  grid-row: 4 / 5;
 }
 
 
