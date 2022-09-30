@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const Search = ({ setUser }) => {
+const Search = ({ setter }) => {
   const [search, setSearch] = useState('');
 
   const handleChange = (e) => {
@@ -8,7 +8,7 @@ const Search = ({ setUser }) => {
   };
 
   const handleSubmit = () => {
-    setUser(search);
+    setter(search);
   };
 
   return (

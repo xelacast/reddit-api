@@ -1,20 +1,19 @@
 import { useState } from 'react';
 import Search from '../components/search';
-import DataDisplay from '../components/subreddits/dataDisplay';
+import Body from '../components/subreddits/subredditBody';
 
 import styles from '../styles/subreddits.module.scss';
 
 const Subreddits = () => {
-  const [user, setUser] = useState('');
+  const [subreddit, setSubreddit] = useState('');
 
   return (
     <section id="profile">
       <div className={styles.search_bar}>
-        <Search setUser={setUser} />
-        <h2>{user}</h2>
+        <Search setter={setSubreddit} />
       </div>
       <div>
-        <DataDisplay user={user} />
+        <Body subreddit={subreddit} />
       </div>
     </section>
   );
