@@ -1,7 +1,7 @@
-import styles from '../styles/navbar.module.scss';
-import Home from '../assets/home-outline.svg';
-import User from '../assets/people-outline.svg';
-import Article from '../assets/newspaper-outline.svg';
+import styles from './navbar.module.scss';
+import Home from '../../assets/home-outline.svg';
+import User from '../../assets/people-outline.svg';
+import Article from '../../assets/newspaper-outline.svg';
 import NavItem from './navItem';
 
 interface NavigationProps {

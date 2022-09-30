@@ -1,4 +1,4 @@
-import styles from '../styles/navItem.module.scss';
+import styles from './navItem.module.scss';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
