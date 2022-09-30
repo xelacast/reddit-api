@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const Search = ({ setter }) => {
+const SearchBar = ({ setter }) => {
   const [search, setSearch] = useState('');
 
   const handleChange = (e) => {
@@ -21,4 +21,4 @@ const Search = ({ setter }) => {
   );
 };
 
-export default Search;
+export default SearchBar;
