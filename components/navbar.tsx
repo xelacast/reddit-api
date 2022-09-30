@@ -42,7 +42,6 @@ const NavBar = () => {
             </li>
           );
         })}
-        );
       </ul>
     </div>
   );

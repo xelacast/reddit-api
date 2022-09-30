@@ -19,6 +19,7 @@ const NavItem = ({ icon, name, href }: NavigationProps) => {
             ? `${styles.navContainer} ${styles.active}`
             : `${styles.navContainer}`
         }
+        data-testid={name}
       >
         <div className={styles.textContainer}>
           <div className={styles.icon}>
