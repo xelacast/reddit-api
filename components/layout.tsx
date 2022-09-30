@@ -1,4 +1,4 @@
-import NavBar from './navbar';
+import NavBar from './nav/navbar';
 import Footer from './footer';
 import styles from '../styles/layout.module.scss';
 

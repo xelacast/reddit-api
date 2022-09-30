@@ -1,0 +1,31 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 55vh auto auto;
+  margin: 50px;
+  gap: 1fr
+}
+
+.nav {
+    background-color: grey;
+    grid-column: 1 / 3;
+    grid-row: 1 / 2;
+    max-width: 400px;
+}
+
+.main {
+  grid-column: 4 / 13;
+  background-color: azure;
+  grid-row: 1 / 3;
+}
+
+.footer {
+  grid-column: 1 / 13;
+  display: flex;
+  justify-content: center;
+  background-color: gold;
+  grid-row: 3/4;
+}
+
+
+
