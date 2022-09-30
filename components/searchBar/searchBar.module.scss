@@ -1,0 +1,40 @@
+@use '../../styles/utils/library';
+
+.container {
+  background-color: beige;
+  width: 560px;
+  height: 3em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  margin: 10px;
+}
+
+.searchContainer {
+  width: auto;
+  position: relative;
+  border-radius: 20px;
+
+  .input {
+    width: 240px;
+    height: 35px;
+    border-radius: 20px;
+    border: none;
+    padding: 10px 20px 10px 35px;
+    // background-color: library.$search-bk;
+    background-color: grey;
+
+    &:active {
+      border: green;
+    }
+  }
+
+  .icon {
+    position: absolute;
+    left: 12px;
+    top: 10px;
+
+  }
+
+}
