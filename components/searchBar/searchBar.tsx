@@ -14,24 +14,22 @@ const SearchBar = ({ setter }) => {
   };
 
   return (
-    <div className={styles.container}>
-      <div className={styles.searchContainer}>
-        <div className={styles.icon}>
-          <SearchIcon height={17} width={17} />
-        </div>
-        <input
-          type="text"
-          className={styles.input}
-          id="input-box"
-          placeholder="search"
-          onChange={(e) => handleChange(e)}
-          onKeyDown={(e) => {
-            if (e.key === 'enter') {
-              handleSubmit();
-            }
-          }}
-        />
+    <div className={styles.searchContainer}>
+      <div className={styles.icon}>
+        <SearchIcon height={17} width={17} />
       </div>
+      <input
+        type="text"
+        className={styles.input}
+        id="input-box"
+        placeholder="search"
+        onChange={(e) => handleChange(e)}
+        onKeyDown={(e) => {
+          if (e.key === 'enter') {
+            handleSubmit();
+          }
+        }}
+      />
     </div>
   );
 };

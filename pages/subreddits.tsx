@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import SearchBar from '../components/searchBar/searchBar';
+import Search from '../components/searchBar/search';
 import Body from '../components/subreddits/subredditBody';
 
 import styles from '../styles/subreddits.module.scss';
@@ -10,7 +10,7 @@ const Subreddits = () => {
   return (
     <section id="profile">
       <div className={styles.search_bar}>
-        <SearchBar setter={setSubreddit} />
+        <Search setter={setSubreddit} />
       </div>
       <div>
         <Body subreddit={subreddit} />
