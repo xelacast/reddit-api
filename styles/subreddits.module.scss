@@ -3,3 +3,13 @@
   justify-content: space-between;
   align-items: center;
 }
+
+.posts {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 1%;
+
+  .post {
+    flex-basis: 49.5%;
+  }
+}
