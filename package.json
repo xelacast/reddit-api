@@ -6,8 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint --ext *.ts ./**/*.tsx --fix",
-    "prettier-format": "prettier --config .prettierrc 'pages/**/*.tsx' --write",
+    "lint": "eslint --ext *.ts ./**/*.tsx ./**/**/*.tsx --fix",
+    "prettier-format": "prettier --config .prettierrc 'pages/**/*.tsx' 'components/**/*.tsx --write",
     "test:e2e": "playwright test"
   },
   "dependencies": {
