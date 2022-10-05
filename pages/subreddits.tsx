@@ -1,16 +1,8 @@
 import { useState } from 'react';
-import useSWR from 'swr';
 import SubHeader from '../components/subreddits/subHeader';
-import Post from '../components/subreddits/post';
+import Posts from '../components/subreddits/posts';
 import styles from '../styles/subreddits.module.scss';
-import Heart from '../assets/heart-outline.svg';
-import Friend from '../assets/people-outline.svg';
-import Chart from '../assets/stats-chart-outline.svg';
-import Page from '../assets/newspaper-outline.svg';
-import Face from '../assets/person-circle-outline.svg';
-import Time from '../assets/timer-outline.svg';
-import DataBox from '../components/utils/dataBox';
-import { postData } from '../utils/fillerData';
+import DataContainer from '../components/utils/dataContainer';
 
 const Subreddits = () => {
   const [subreddit, setSubreddit] = useState('askreddit');
@@ -21,24 +13,11 @@ const Subreddits = () => {
         <SubHeader setter={setSubreddit} subreddit={subreddit} />
       </div>
 
-      <div className={styles.dataContainer}>
-        <DataBox icon={Heart} data={'AskReddit'} info={''} />
-        <DataBox icon={Friend} data={'123'} info={'Subs'} />
-        <DataBox icon={Chart} data={'12345'} info={'Active Users'} />
-        <DataBox icon={Page} data={'EN-US'} info={'Language'} />
-        <DataBox icon={Face} data={'Jan 5th, 2020'} info={'Created'} />
-        <DataBox icon={Time} data={'TEMP'} info={'Friends'} />
-      </div>
+      <DataContainer subreddit={subreddit} />
+      <div className={styles.posts}>
+        <Posts subreddit={subreddit} />
 
-      <ul className={styles.posts}>
-        {postData.map((post) => {
-          return (
-            <li key={post.title} className={styles.post}>
-              <Post post={post} />
-            </li>
-          );
-        })}
-      </ul>
+      </div>
     </section>
   );
 };
