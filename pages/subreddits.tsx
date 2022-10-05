@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import useSWR from 'swr';
 import SubHeader from '../components/subreddits/subHeader';
 import Post from '../components/subreddits/post';
 import styles from '../styles/subreddits.module.scss';
@@ -9,20 +10,15 @@ import Page from '../assets/newspaper-outline.svg';
 import Face from '../assets/person-circle-outline.svg';
 import Time from '../assets/timer-outline.svg';
 import DataBox from '../components/utils/dataBox';
-import { headerData, postData } from '../utils/fillerData';
+import { postData } from '../utils/fillerData';
 
 const Subreddits = () => {
-  const [subreddit, setSubreddit] = useState('');
-
-  // TODO: add fetch call to reddit API for subreddit
-  // TODO: add fetch call to reddit subreddit posts
-  // const { data, isLoading, error } = useSubreddit(subreddit);
-  // console.log(, isLoading, error);
+  const [subreddit, setSubreddit] = useState('askreddit');
 
   return (
     <section id="subreddits" className={styles.container}>
       <div className={styles.header}>
-        <SubHeader setter={setSubreddit} data={headerData} />
+        <SubHeader setter={setSubreddit} subreddit={subreddit} />
       </div>
 
       <div className={styles.dataContainer}>
@@ -48,3 +44,14 @@ const Subreddits = () => {
 };
 
 export default Subreddits;
+
+export async function getStaticProps() {
+  const res = await fetch('https://www.reddit.com/r/java.json');
+  let posts = await res.json();
+  posts = posts.data.children;
+  return {
+    props: {
+      posts,
+    },
+  };
+}

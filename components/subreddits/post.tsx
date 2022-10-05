@@ -1,6 +1,14 @@
 import styles from './post.module.scss';
 
 const Post = ({ post }) => {
+
+  // const fetcher = (url) => fetch(url).then((res) => res.json());
+
+  // const { data, error } = useSWR(
+  //   `https://www.reddit.com/r/${subreddit}.json`,
+  //   fetcher
+  // );
+
   return (
     <article className={styles.container}>
       <h2>{post.title}</h2>
