@@ -5,7 +5,6 @@ import styles from './posts.module.scss';
 const Posts = ({ subreddit }) => {
   const { data, error } = useSubreddit(`r/${subreddit}.json`);
 
-  // console.log(data, "indie pots");
   if (!data && !error) {
     return <div>Loading</div>;
   }
