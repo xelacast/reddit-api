@@ -1,7 +1,9 @@
+@use '../../styles/utils/library';
+
 .dataContainer {
   grid-row: 2/3;
   grid-column: 1/7;
-  gap: 15px;
+  gap: library.$gap;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   width: 100%;

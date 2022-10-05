@@ -1,8 +1,10 @@
+@use '../styles/utils/library';
+
 .container {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   grid-template-rows: 300px 75px auto;
-  gap: 15px;
+  gap: library.$gap;
 }
 
 .header {

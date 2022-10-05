@@ -10,19 +10,19 @@ import DataBox from './dataBox';
 
 const DataContainer = ({ subreddit }) => {
   const { data, error } = useSubreddit(`r/${subreddit}/about.json`);
-
-  if (error) {
-    return (
-      <div className={styles.dataContainer}>
-        <DataBox icon={Heart} data={'Not A Sub'} info={''} />
-        <DataBox icon={Friend} data={'Not A Sub'} info={'Subs'} />
-        <DataBox icon={Chart} data={'Not A Sub'} info={'Active Users'} />
-        <DataBox icon={Page} data={'Not A Sub'} info={'Language'} />
-        <DataBox icon={Face} data={'Not A Sub'} info={'Created'} />
-        <DataBox icon={Time} data={'Not A Sub'} info={'Friends'} />
-      </div>
-    );
-  }
+  console.log(data, error);
+  // if (data.error !== undefined) {
+  //   return (
+  //     <div className={styles.dataContainer}>
+  //       <DataBox icon={Heart} data={'Not A Sub'} info={''} />
+  //       <DataBox icon={Friend} data={'Not A Sub'} info={'Subs'} />
+  //       <DataBox icon={Chart} data={'Not A Sub'} info={'Active Users'} />
+  //       <DataBox icon={Page} data={'Not A Sub'} info={'Language'} />
+  //       <DataBox icon={Face} data={'Not A Sub'} info={'Created'} />
+  //       <DataBox icon={Time} data={'Not A Sub'} info={'Friends'} />
+  //     </div>
+  //   );
+  // }
   if (!data && !error) {
     return <div>Loading</div>;
   }

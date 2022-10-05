@@ -16,7 +16,6 @@ const Subreddits = () => {
       <DataContainer subreddit={subreddit} />
       <div className={styles.posts}>
         <Posts subreddit={subreddit} />
-
       </div>
     </section>
   );

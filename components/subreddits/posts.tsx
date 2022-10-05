@@ -1,4 +1,5 @@
 import useSubreddit from '../../hooks/useSubreddit';
+import Link from 'next/link';
 import styles from './posts.module.scss';
 
 const Posts = ({ subreddit }) => {
@@ -16,7 +17,11 @@ const Posts = ({ subreddit }) => {
         : data.data.children.map(({ data }) => {
             return (
               <article className={styles.post} key={data.title}>
-                <h2>{data.title}</h2>
+                <Link href={data.url}>
+                  <a target="_blank" className={styles.linkTitle}>
+                    <h2>{data.title}</h2>
+                  </a>
+                </Link>
                 <div className={styles.info}>
                   <p>{data.author}</p>
                   <p>{data.created}</p>

@@ -4,9 +4,7 @@
 .container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 15px;
-  // grid-row: 3/4;
-  // grid-column: 1/7;
+  gap: library.$gap;
 
   .post {
     background-color: white;
@@ -37,6 +35,13 @@
 
     &:nth-child(even) {
       grid-column: 2/3;
+    }
+
+    .linkTitle {
+      transition: all 0.2s ease;
+      &:hover {
+        color: red;
+      }
     }
   }
 }
