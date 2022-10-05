@@ -1,15 +1,43 @@
-.search_bar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.container {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: 300px 75px auto;
+  gap: 2%;
+}
+
+.header {
+  grid-row: 1/2;
+  grid-column: 1/7;
+}
+
+.dataContainer {
+  grid-row: 2/3;
+  grid-column: 1/7;
+  gap: 2%;
+  display: grid;
+  // flex: row;
+  grid-template-columns: repeat(6,1fr);
+  // grid-template-rows: 1fr 1fr;
+  width: 100%;
+  &:nth-child(0) {
+    grid-column: 1/2;
+  }
 }
 
 .posts {
-  display: flex;
-  flex-flow: row wrap;
-  gap: 1%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-columns: auto;
+  gap: 2%;
+  grid-row: 3/4;
+  grid-column: 1/7;
 
   .post {
-    flex-basis: 49.5%;
+    &:nth-child(odd) {
+      grid-column: 1/2;
+    }
+    &:nth-child(even) {
+      grid-column: 2/3;
+    }
   }
 }
