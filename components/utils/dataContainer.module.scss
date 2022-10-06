@@ -1,0 +1,14 @@
+@use '../../styles/utils/library';
+
+.dataContainer {
+  grid-row: 2/3;
+  grid-column: 1/7;
+  gap: library.$gap;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  width: 100%;
+
+  &:nth-child(0) {
+    grid-column: 1/2;
+  }
+}

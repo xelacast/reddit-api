@@ -1,0 +1,26 @@
+@use '../../styles/utils/library';
+
+.searchContainer {
+  width: auto;
+  position: relative;
+  border-radius: 20px;
+  background-color: grey;
+
+  .input {
+    width: 100%;
+    height: 35px;
+    border-radius: 20px;
+    border: none;
+    padding: 10px 20px 10px 35px;
+    opacity: .5;
+    outline: none;
+  }
+
+  .icon {
+    position: absolute;
+    left: 12px;
+    top: 10px;
+
+  }
+
+}
