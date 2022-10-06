@@ -14,7 +14,7 @@ const Posts = ({ url }) => {
       {data.data ? (
         data.data.children.map(({ data }) => {
           return (
-            <article className={styles.post} key={data.title}>
+            <article className={styles.post} key={data.created_utc}>
               <Link href={data.url}>
                 <a target="_blank" className={styles.linkTitle}>
                   <h2>{data.title}</h2>
