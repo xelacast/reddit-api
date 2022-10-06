@@ -28,7 +28,6 @@ const Header = ({ setter, url }) => {
         </div>
         <Search setter={setter} />
       </div>
-
     </div>
   );
 };
