@@ -1,5 +1,4 @@
 import useSWR from 'swr';
-import { useState } from 'react';
 import Search from '../searchBar/search';
 import styles from './subHeader.module.scss';
 
