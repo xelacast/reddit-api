@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import SubHeader from '../components/subreddits/subHeader';
 import Posts from '../components/subreddits/posts';
 import styles from '../styles/subreddits.module.scss';
@@ -6,30 +6,26 @@ import DataContainer from '../components/utils/dataContainer';
 
 const Subreddits = () => {
   const [subreddit, setSubreddit] = useState('askreddit');
+  const [aboutUrl, setAboutUrl] = useState('r/askreddit/about.json');
+  const [subUrl, setSubUrl] = useState('r/askreddit.json');
+
+  useEffect(() => {
+    setAboutUrl(`r/${subreddit}/about.json`);
+    setSubUrl(`r/${subreddit}.json`);
+  }, [subreddit]);
 
   return (
     <section id="subreddits" className={styles.container}>
       <div className={styles.header}>
-        <SubHeader setter={setSubreddit} subreddit={subreddit} />
+        <SubHeader setter={setSubreddit} url={aboutUrl} />
       </div>
 
-      <DataContainer subreddit={subreddit} />
+      <DataContainer url={aboutUrl} />
       <div className={styles.posts}>
-        <Posts subreddit={subreddit} />
+        <Posts url={subUrl} />
       </div>
     </section>
   );
 };
 
 export default Subreddits;
-
-export async function getStaticProps() {
-  const res = await fetch('https://www.reddit.com/r/java.json');
-  let posts = await res.json();
-  posts = posts.data.children;
-  return {
-    props: {
-      posts,
-    },
-  };
-}
