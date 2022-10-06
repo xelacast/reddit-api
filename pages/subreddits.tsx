@@ -4,6 +4,8 @@ import Posts from '../components/subreddits/posts';
 import styles from '../styles/subreddits.module.scss';
 import DataContainer from '../components/utils/dataContainer';
 
+import { aboutSub } from '../utils/content/dataContainerContent';
+
 const Subreddits = () => {
   const [subreddit, setSubreddit] = useState('askreddit');
   const [aboutUrl, setAboutUrl] = useState('r/askreddit/about.json');
@@ -20,7 +22,7 @@ const Subreddits = () => {
         <SubHeader setter={setSubreddit} url={aboutUrl} />
       </div>
 
-      <DataContainer url={aboutUrl} />
+      <DataContainer url={aboutUrl} info={aboutSub} />
       <div className={styles.posts}>
         <Posts url={subUrl} />
       </div>

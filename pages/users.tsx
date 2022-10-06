@@ -1,18 +1,24 @@
-import { useState } from 'react';
-import SubHeader from '../components/subreddits/subHeader';
+import { useEffect, useState } from 'react';
+import Header from '../components/users/header';
 import styles from '../styles/subreddits.module.scss';
 import DataContainer from '../components/utils/dataContainer';
+import { aboutUser } from '../utils/content/dataContainerContent';
 
 const Users = () => {
-  const [user, setUser] = useState('askreddit');
+  const [user, setUser] = useState('elon_musk');
+  const [userUrl, setUserUrl] = useState('user/elon_musk/about.json');
+
+  useEffect(() => {
+    setUserUrl(`user/${user}/about.json`);
+  }, [user]);
 
   return (
     <section id="subreddits" className={styles.container}>
       <div className={styles.header}>
-        <SubHeader setter={setUser} state={user} />
+        <Header setter={setUser} url={userUrl} />
       </div>
 
-      <DataContainer subreddit={user} />
+      <DataContainer url={userUrl} info={aboutUser} />
     </section>
   );
 };
