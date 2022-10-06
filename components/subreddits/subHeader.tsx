@@ -16,7 +16,9 @@ const SubHeader = ({ setter, subreddit }) => {
   return (
     <div className={styles.container}>
       <div className={styles.info}>
-        <h1>{data.data ? data.data.display_name_prefixed : data.error}</h1>
+        <h1 data-testid="sub-title">
+          {data.data ? data.data.display_name_prefixed : data.error}
+        </h1>
         <Search setter={setter} />
       </div>
       <div className={styles.description}>
