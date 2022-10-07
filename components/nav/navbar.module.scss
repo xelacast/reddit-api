@@ -1,0 +1,25 @@
+@use '../../styles/utils/library';
+
+.container {
+ background-color: white;
+ height: 100%;
+ border-radius: 0 0 20px 0;
+ .listContainer {
+  padding: 15px 0 0 15px;
+ }
+}
+
+.header {
+  height: 130px;
+  border-bottom: 2px solid library.$background-col;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.navItem {
+  margin-bottom: 20px;
+}
+
+

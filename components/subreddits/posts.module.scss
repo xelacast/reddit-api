@@ -1,0 +1,47 @@
+@use '../../styles/utils/library';
+
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: library.$gap;
+
+  .post {
+    background-color: white;
+    padding: 2em;
+    border-radius: library.$border-radius;
+    height: 345px;
+
+    .info {
+      display: flex;
+      gap: 2em;
+      margin: 10px 0;
+
+    }
+
+    .bodyText {
+      width: 50%;
+      margin: 10px 0;
+    }
+
+    .stats {
+      display: flex;
+      gap: 2em;
+    }
+
+    &:nth-child(odd) {
+      grid-column: 1/2;
+    }
+
+    &:nth-child(even) {
+      grid-column: 2/3;
+    }
+
+    .linkTitle {
+      transition: all 0.2s ease;
+      &:hover {
+        color: red;
+      }
+    }
+  }
+}
