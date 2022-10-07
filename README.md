@@ -3,160 +3,88 @@
 # How I am working on this project
 My goal is to build a data heatmap using subreddit data from the Reddit REST API. The heatmap will show the activity of each subreddit based on time. You will be able to search any subreddit of your liking.
 
-* The use of a [Software Development Lifecycle](./SDLC.md) is probably unnessary for this small project but it is a good technique to learn.
+* The use of a [Software Development Lifecycle](./SDLC.md) is probably unnecessary for this small project but it is a good technique to learn.
 * I built the designs, UI/UX, and workflow of the app using Figma and github, Project Designs PDF:
-  * [Technical Writeup Dashboard](https://drive.google.com/file/d/1SGJABBP4sypdlplxqK10bp1k1KateU7b/view?usp=sharing)
-  * [Subreddit Dashboard](https://drive.google.com/file/d/1SeG9ZHeqVA2dORgi6uDLSrRgPKA773HM/view?usp=sharing)
-  * [User Dashboard](https://drive.google.com/file/d/1yxNleV10uJiTWJ91o702yPZr0iC8l6tp/view?usp=sharing)
-* I used 2 long lasting branches and a variety short lived (feature) branches that merge into the Development branch, and the development branch is merged into the production branch. I approahed this project with this workflow to simulate a professional workflow with a team.
-* Every PR is simulated with a [Template](.github/pull_request_template.md) to encorporate clear communication with every merge.
-* The Reddit API is open to the public as long as you have an authorization key, and I was interested in what data lies within it.
-* The project is build with Next.JS, TypeScript, Express, Node.js. I used Next.js because I was familiar with React and heared good things about it. I wanted to learn it and see how it works in comparison with React. Also in the future I want to recreate my personal site with NEXT to
-
-# Technologies
+  * [Technical Writeup Dashboard](https://drive.google.com/file/d/1tP4z9t34Qo6WgABMA55-k3X6thAqcdem/view?usp=sharing)
+  * [Subreddit Dashboard](https://drive.google.com/file/d/1ep2JeKVOIhHOM9GonAK2PBlwP-yo9M6f/view?usp=sharing)
+  * [User Dashboard](https://drive.google.com/file/d/11OORE37_rroFUpjcqpNSSsF3ah3CcGzi/view?usp=sharing)
+* I used 2 long lasting branches and a variety of short lived (feature) branches that merge into the Development branch, and the development branch is merged into the production branch. I approached this project with this workflow to simulate a professional workflow with a team.
+* Every PR is simulated with a [Template](.github/pull_request_template.md) to incorporate clear communication with every merge.
+* The Reddit API is open to the public, and I was interested in what data lies within it.
+* The project is build with Next.JS, TypeScript, Node.js. I used Next.js because I was familiar with React and heard good things about it. I wanted to learn it and see how it works in comparison with React. Also in the future I want to recreate my personal site with NEXT.
 
 # Learning Objective
+* Learn Fundamentals of NEXT.js.
+* Data Fetching from a third party REST API.
+* End to End Testing.
+* Learn TypeScript Fundamentals.
+* Become more familiar with the component mounting.
+* Creating DRY Components.
 
-# Problems
+# How to navigate this project
+This project uses NPM
+Clone the repository to your desired folder and install all dependencies
 
-# Reddit API Endpoints used
-Should all of this info be in here or can it be in a notes area?
-Ill transfer it over to a notes section
-
-The access core is https://oauth.reddit.com
-A client key, secret key, and user authentication is required to pull from this REST API.
-This process wil scape the data I need and return it back to the client as an object. I'll see if I can use anything that is useful.
-
-## Endpoints Used
-### /user/*user*/about
-the json object looks like this. The project wil be using the endpoints in the examples. This is for my own sake to reference back to. This is the data that I will visualize on the data visualizer.
-
-{
-  "kind": string,
-  "data": {
-    "subreddit": {
-      "public_description": string,
-    }
-    "snoovatar_img": string,
-    "snoovatar_size": [number, number],
-    "has_gold_subscription": bool,
-    "coins": number,
-    "is_gold": bool,
-    "is_suspended": bool,
-    "name": string,
-    "created_utc": double,
-    "total_karma": number,
-    "link_karma": number,
-    "awardee_karma": number,
-    "awarder_karma": number,
-    "comment_karma": number,
-    "num_friends": number,
-  }
-}
-
-*sorting*
-Create a drop down menu for users to sort through the data.
-[context, show, sort, t, type, username, after, before]
-after="" after tag on menu. Limit can be used along with after to create a pagination feature?
-ie
 `
-{
-  data: {
-    after: string
-  }
-}
+npm i
 `
-Collect these
-### /user/*username*/overview
-{
-  data: {
-    after: string,
-    children: {
-      0: {
-        subreddit: string,
-        selftext: string,
-        title: string,
-        downs: number,
-        ups: number,
-        total_awards_received: number,
-        link_flair_text: string,
-        created: number,
-        num_comments: number,
-      }
-      1: {},
-      ...
-      [25-100] : {
 
-      }
-    }
-  }
-}
-### /user/*username*/comments
-{
-  data: {
-    after: string,
-    children: {
-      0: {
-        link_title: string,
-        ups: number,
-        downs: number,
-        subreddit: string,
-        body: string,
-        link_permalink: string(link to subreddit post)
-      }
-      1: {},
-      ...
-      [25-100] : {
+Go Live with
+`
+npm run dev
+`
+Go to https://localhost:3000
+There are 3 sections to navigate to on the left navigation panel. Use the search bar
 
-      }
-    }
-  }
-}
-### /user/*username*/upvoted
-### /user/*username*/downvoted
-### /user/*username*/hidden
-### /user/*username*/saved
-### /user/*username*/gilded
+Run Tests with
+`
+npm run test:e2e
+`
+# Why I built this project this way
+* Styling the github workflow with 2 long term branches and many short lived branches. This approach styled professional workflows giving myself more familiarity with issues and PRs.
+* The decision of not using media queries was clear because the main focus was learning NEXT and data fetching from a 3rd party REST API.
+* Prop drilling was my state management of choice because I thought my components would line up more fluidly. React Context would have proved useful here.
+* NEXT was a choice I derived from because I heard good things about it, the tech is on the job market, and I wanted to learn a new technology to add to my arsenal.
+* Using End to End testing was a last minute decision. I used it to learn more about it and to get familiar with another testing library.
+* Component architecture is set up as the Main Component folder and inside is the component and the component style, along with a __tests__ folder for each component. This helped me stay in one place when building each component.
+* Figma Designs were created to guide me through the UI creation of the project. I will also be using UI/UX designs to build in an industry.
 
-### /r/subreddit
-{
-  data: {
-    after: string,
-    children: {
-      0: {
-        selftext: string,
-        ups: number,
-        downs: number,
-        score: number,
-        subreddit: string,
-        body: string,
-        url: string(link to subreddit)
-        title: string,
-        subreddit_name_prefixed: string,
-        total_awards_received: number,
-        created_utc: number,
-        author: string,
-        subreddit_subscribers: number,
-      }
-      1: {},
-      ...
-      [25-100] : {
+# If I had more time I would change...
+* To use React Context and a global store.
+* The architecture of my components for D.R.Y delivery.
+* Data formatting was a large issue. I would go back and find a way to format the data of the reddit api so I didn't have to hack around it on every data point.
 
-      }
-    }
-  }
-}
+# Technologies
+JavaScript, TypeScript, HTML, CSS, Node.js, NEXT.js, React.js, REST API, Reddit API, SASS, PlayWright testing library.
 
-### r/*subreddit*/about.json
-{
-  data: {
-    title: string,
-    active_user_count: number,
-    subscribers: number,
-    public_description: string,
-    created_utc: number,
-    language: string,
+# What I learned
+* Create your html elements to be test friendly.
+* Components can be smaller than I thought (I need to confirm what a good practice is).
+* useSWR and custom hooks simplify data fetching.
+* PlayWright End To End Testing.
+* NEXT.js
+* Reddit REST API.
+* I want to be a backend developer or full stack developer.
+* Using a single long term branch and many small branches is better for single developer projects.
 
-  }
-}
+# What I did well
+* I think I created a folder architecture that is easy to navigate. Each folder holds the proper files to quickly work on a component. No need to jump folders to find a styles sheet or a test.
+* I taught myself NEXT in 10 days. By no means am I a professional but the fundamentals are secure in my brain.
 
+# What I did not so well on
+* The top [page routing](./components/header.tsx) I used NEXT useRouter to pull the URL subdomain and set state with it. This causes a bug to show the 'Dashboard' text on page refresh on any of my pages.
+* This project was meant for me to learn NEXT.js, how to implement TypeScript with it.
+* I did not use TypeScript thoroughly. I am lacking knowledge in fundamentals so I am actively learning to improve.
+* My commits were all over the place. I didn't have a clear goal of what I was creating a few times so my commits and branching were off a bit.
+* Hacked State in [subreddits page](./pages/subreddits.tsx). There is definitely a better way to do this.getStaticProps? getServerSideProps?
+
+# Where I can Improve
+* Create context for the app and create a store.
+* Format Data to a universal standard?
+* Plan out your props and decide ahead of time what will work the best. React Context for global state scope would help.
+* Plan the css formatting for html tags, fonts, sizing, colors, line height, before you do anything else.
+* Become a backend developer.
+* Data fetching and prop drilling.
+* How state flows through components and how to reuse specific components. In the future break your components down into more pieces?
+* Advanced TypeScript and create a stronger foundation of fundamentals.
+* Create a commit and branch principle. When and what I should be commiting and when I should use an extra branch system.
