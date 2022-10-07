@@ -1,14 +1,10 @@
-import useSWR from 'swr';
+import useSubreddit from '../../hooks/useSubreddit';
 import Search from '../searchBar/search';
 import styles from './subHeader.module.scss';
 
-const SubHeader = ({ setter, subreddit }) => {
-  const fetcher = async (url) => await fetch(url).then((res) => res.json());
+const SubHeader = ({ setter, url }) => {
+  const { data, error } = useSubreddit(url);
 
-  const { data, error } = useSWR(
-    `https://www.reddit.com/r/${subreddit}/about.json`,
-    fetcher
-  );
   if (!data && !error) {
     return <div>Loading</div>;
   }

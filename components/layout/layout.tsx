@@ -1,5 +1,4 @@
 import NavBar from '../nav/navbar';
-import Footer from '../footer';
 import styles from './layout.module.scss';
 import Header from '../header';
 
@@ -13,9 +12,6 @@ const Layout = ({ children }) => {
         <NavBar />
       </nav>
       <main className={styles.main}>{children}</main>
-      <footer className={styles.footer}>
-        <Footer />
-      </footer>
     </div>
   );
 };

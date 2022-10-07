@@ -16,4 +16,12 @@ module.exports = {
 
     return config;
   },
+  images: {
+    domains: [
+      'www.redditstatic.com',
+      'www.reddit.com',
+      'styles.redditmedia.com',
+      'i.redd.it',
+    ],
+  },
 };

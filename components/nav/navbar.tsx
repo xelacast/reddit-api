@@ -34,7 +34,7 @@ const NavBar = () => {
       <div className={styles.header}>
         <h2>Reddit Visuals</h2>
       </div>
-      <ul>
+      <ul className={styles.listContainer}>
         {navigation.map((content) => {
           return (
             <li className={styles.navItem} key={content.name}>

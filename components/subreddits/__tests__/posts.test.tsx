@@ -20,14 +20,14 @@ test.describe('Subreddit Test', () => {
     ).valueOf();
     expect(title).toBe('r/java');
   });
-  // test('Search Subreddit Failure Test', async ({ page }) => {
-  //   const searchInput = page.locator('id=input-box');
-  //   await searchInput.type('asdgfda');
-  //   await searchInput.press('Enter');
+  test('Search Subreddit Failure Test', async ({ page }) => {
+    const searchInput = page.locator('id=input-box');
+    await searchInput.type('asdf');
+    await searchInput.press('Enter');
 
-  //   const title = (
-  //     await page.locator('data-testid=sub-title').innerText()
-  //   ).valueOf();
-  //   expect(title).toBe('Error Subreddit Not Found');
-  // });
+    const title = (
+      await page.locator('data-testid=sub-title').innerText()
+    ).valueOf();
+    expect(title).toBe('404');
+  });
 });

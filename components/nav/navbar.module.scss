@@ -1,15 +1,17 @@
 @use '../../styles/utils/library';
 
 .container {
- padding: 10px;
  background-color: white;
  height: 100%;
  border-radius: 0 0 20px 0;
+ .listContainer {
+  padding: 15px 0 0 15px;
+ }
 }
 
 .header {
   height: 130px;
-  border-bottom: 1px solid library.$background-col;
+  border-bottom: 2px solid library.$background-col;
   display: flex;
   justify-content: center;
   align-items: center;
