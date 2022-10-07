@@ -30,12 +30,3 @@ export const postData = [
     num_comments: '453',
   },
 ];
-
-// const Icons = {
-//   Heart: [Heart, ],
-//   Friend: Friend,
-//   Chart: Chart,
-//   Page: Page,
-//   Face: Face,
-//   Time: Time,
-// };
