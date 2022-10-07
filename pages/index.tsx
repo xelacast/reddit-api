@@ -40,7 +40,7 @@ export default function Home() {
           </p>
         </div>
         <div className={styles.inner}>
-          <h1>Why This project was created</h1>
+          <h1>Why this project was created</h1>
           <br />
           <p>
             I went out and created this project for the sole purpose of learning
