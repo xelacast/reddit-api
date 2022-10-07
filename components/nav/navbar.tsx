@@ -32,7 +32,7 @@ const NavBar = () => {
   return (
     <div className={styles.container}>
       <div className={styles.header}>
-        <h2>Reddit Visuals</h2>
+        <h2>Reddit Data</h2>
       </div>
       <ul className={styles.listContainer}>
         {navigation.map((content) => {
