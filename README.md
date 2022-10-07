@@ -76,7 +76,7 @@ JavaScript, TypeScript, HTML, CSS, Node.js, NEXT.js, REST API, Reddit API, SASS,
 - I taught myself NEXT in 10 days. By no means am I a professional but the fundamentals are secure in my brain.
 - I have retained a lot more than I thought I would.
 
-# What I did not so well on
+# What I lacked knowledge
 
 - The top [page routing](./components/header.tsx) on lines 6-15 I used NEXT's useRouter to pull the URL subdomain and set state with it. This causes a bug to show the 'Dashboard' text on page refresh on any of my pages except for the dashboard page.
 - This project was meant for me to learn NEXT.js, how to implement TypeScript with it, I hardly used TypeScript because I was focused on learning NEXT. DO NOT try and learn many things at once.
