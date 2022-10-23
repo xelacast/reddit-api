@@ -21,15 +21,15 @@ const Posts = ({ url }) => {
                 </a>
               </Link>
               <div className={styles.info}>
-                <p>{data.author}</p>
-                <p>{data.created}</p>
-                <p>{data.score}</p>
+                <p>{data?.author}</p>
+                <p>{data?.created}</p>
+                <p>{data?.score}</p>
               </div>
               <p className={styles.bodyText}>{data.body}</p>
               <div className={styles.stats}>
-                <p>Ups {data.ups}</p>
-                <p>Downs {data.downs}</p>
-                <p>Comments {data.num_comments}</p>
+                <p>Ups {data?.ups}</p>
+                <p>Downs {data?.downs}</p>
+                <p>Comments {data?.num_comments}</p>
               </div>
             </article>
           );

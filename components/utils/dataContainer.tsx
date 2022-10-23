@@ -32,7 +32,7 @@ const DataContainer = ({ url, info }) => {
           <DataBox
             key={item.info}
             icon={iconArr[i]}
-            data={data.error ? data.error : data.data[item.data]}
+            data={data?.data ? data.data[item.data] : 'No Data'}
             info={item.info}
           />
         );

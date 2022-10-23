@@ -8,6 +8,9 @@ const SubHeader = ({ setter, url }) => {
   if (!data && !error) {
     return <div>Loading</div>;
   }
+  if (data === undefined) {
+    return <div>This unit does not exist</div>;
+  }
   return (
     <div className={styles.container}>
       <div className={styles.info}>
