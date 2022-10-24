@@ -20,9 +20,19 @@ test.describe('Subreddit Test', () => {
     ).valueOf();
     expect(title).toBe('r/java');
   });
-  test('Search Subreddit Failure Test', async ({ page }) => {
+  test('Search Banned/Deprecated Subreddit Test', async ({ page }) => {
     const searchInput = page.locator('id=input-box');
     await searchInput.type('asdf');
+    await searchInput.press('Enter');
+
+    const title = (
+      await page.locator('data-testid=sub-title').innerText()
+    ).valueOf();
+    expect(title).toBe('404');
+  });
+  test('Search Uncreated Subreddit Test', async ({ page }) => {
+    const searchInput = page.locator('id=input-box');
+    await searchInput.type('Jhuiice');
     await searchInput.press('Enter');
 
     const title = (

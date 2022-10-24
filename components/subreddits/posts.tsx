@@ -9,9 +9,13 @@ const Posts = ({ url }) => {
     return <div>Loading</div>;
   }
 
+  if (!data) {
+    return <div>Unfortunately this Subreddit Does not Exist</div>;
+  }
+
   return (
     <section className={styles.container}>
-      {data.data ? (
+      {data?.data ? (
         data.data.children.map(({ data }) => {
           return (
             <article className={styles.post} key={data.created_utc}>
@@ -35,7 +39,7 @@ const Posts = ({ url }) => {
           );
         })
       ) : (
-        <div>Unfortunately this Subreddit Does not Exist</div>
+        <div>{data.error}</div>
       )}
     </section>
   );
