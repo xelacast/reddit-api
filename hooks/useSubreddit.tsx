@@ -7,15 +7,6 @@ const fetcher = async (url: string) => {
 const useSubreddit = (url: string) => {
   const { data, error } = useSWR(`https://www.reddit.com/${url}`, fetcher);
 
-  if (data === undefined) {
-    return {
-      data: {
-        error: '404',
-      },
-      error: error,
-    };
-  }
-
   return {
     data: data,
     error: error,

@@ -15,6 +15,10 @@ const DataContainer = ({ url, info }) => {
   if (!data && !error) {
     return <div>Loading</div>;
   }
+
+  if (!data) {
+    return <div>This data does not exist</div>;
+  }
   return (
     <div className={styles.dataContainer}>
       {/* <DataBox icon={Heart} data={data.data.display_name_prefixed} info={''} />
@@ -32,7 +36,7 @@ const DataContainer = ({ url, info }) => {
           <DataBox
             key={item.info}
             icon={iconArr[i]}
-            data={data?.data ? data.data[item.data] : 'No Data'}
+            data={data.data ? data.data[item.data] : 'No Data'}
             info={item.info}
           />
         );

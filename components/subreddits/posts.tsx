@@ -9,9 +9,13 @@ const Posts = ({ url }) => {
     return <div>Loading</div>;
   }
 
+  if (!data) {
+    return <div>Unfortunately this Subreddit Does not Exist</div>;
+  }
+
   return (
     <section className={styles.container}>
-      {data.data ? (
+      {data?.data ? (
         data.data.children.map(({ data }) => {
           return (
             <article className={styles.post} key={data.created_utc}>
@@ -21,21 +25,21 @@ const Posts = ({ url }) => {
                 </a>
               </Link>
               <div className={styles.info}>
-                <p>{data?.author}</p>
-                <p>{data?.created}</p>
-                <p>{data?.score}</p>
+                <p>{data.author}</p>
+                <p>{data.created}</p>
+                <p>{data.score}</p>
               </div>
               <p className={styles.bodyText}>{data.body}</p>
               <div className={styles.stats}>
-                <p>Ups {data?.ups}</p>
-                <p>Downs {data?.downs}</p>
-                <p>Comments {data?.num_comments}</p>
+                <p>Ups {data.ups}</p>
+                <p>Downs {data.downs}</p>
+                <p>Comments {data.num_comments}</p>
               </div>
             </article>
           );
         })
       ) : (
-        <div>Unfortunately this Subreddit Does not Exist</div>
+        <div>{data.error}</div>
       )}
     </section>
   );
