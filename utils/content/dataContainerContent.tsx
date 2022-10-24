@@ -4,11 +4,11 @@ export const aboutSub = [
     data: 'display_name_prefixed',
   },
   {
-    info: 'Subs',
+    info: 'Active Users',
     data: 'active_user_count',
   },
   {
-    info: 'Active Users',
+    info: 'Subs',
     data: 'subscribers',
   },
   {
