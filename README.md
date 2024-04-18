@@ -25,12 +25,19 @@ My goal is to build a NEXT.js application with the Reddit REST API. The user sho
 
 # How to navigate this project
 
-This project uses NPM
+This project uses NPM and Node.js
 Clone the repository to your desired folder and install all dependencies
-`npm i`
+```bash
+git clone git@github.com:xelacast/reddit-api.git && cd reddit-api
+```
+```bash
+npm i
+```
 
 Go Live with
-`npm run dev`
+```bash
+npm run dev
+```
 Go to https://localhost:3000
 There are 3 sections to navigate to on the left navigation panel. The search bar will pull data regarding the page you are on.
 
